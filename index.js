@@ -34,3 +34,27 @@ Window.onscroll = () =>{
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
+
+function doPost(e) {
+  var fullName = e.parameter.fullName;
+  var emailAddress = e.parameter.emailAddress;
+  var mobileNumber = e.parameter.mobileNumber;
+  var emailSubject = e.parameter.emailSubject;
+  var message = e.parameter.message;
+
+  var emailBody = `
+    Full Name: ${fullName}\n
+    Email Address: ${emailAddress}\n
+    Mobile Number: ${mobileNumber}\n
+    Subject: ${emailSubject}\n
+    Message: ${message}
+  `;
+
+  MailApp.sendEmail({
+    to: "your-email@gmail.com", 
+    subject: "New Contact Form Submission: " + emailSubject,
+    body: emailBody
+  });
+
+  return ContentService.createTextOutput("Form submitted successfully");
+}
