@@ -135,17 +135,17 @@
 
     <form id="contacts" action="">
         <div class="input-box">
-            <input type="text" placeholder="Full Name" required >
-            <input pattern=".+@gmail\.com" type="text" placeholder="Email Address" required>
+            <input name="fullName" pattern="[A-Za-z ]{2,}" type="text" placeholder="Full Name" required>
+            <input name="emailAddress" pattern=".+@gmail\.com" type="text" placeholder="Email Address" required>
         </div>
         <div class="input-box">
-            <input type="number" placeholder="Mobil Number" required>
-            <input type="text" placeholder="Email Subject" required>
+            <input name="mobileNumber" type="tel" placeholder="Mobile Number" required>
+            <input name="emailSubject" type="text" placeholder="Email Subject" required>
         </div>
-        <textarea name="" id="" cols="30" rows="5" placeholder="Your Message"></textarea>
-        <input style="cursor: pointer;" type="submit" value="Send Message" class="btn" src="">
+        <textarea name="message" id="" cols="30" rows="5" placeholder="Your Message"></textarea>
+        <input style="cursor: pointer;" type="submit" value="Send Message" class="btn">
     </form>
-   </section>
+</section>
    <!--footer-->
    <footer class="footer">
     <div class="footer-text">
